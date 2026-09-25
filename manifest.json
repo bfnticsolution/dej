@@ -1,0 +1,25 @@
+{
+  "name": "CDEJ BF0959 - Centres de Développement d'Enfants et de Jeunes",
+  "short_name": "CDEJ BF0959",
+  "description": "Accompagner les enfants et les jeunes vers une autonomie complète au Burkina Faso.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#0B3FA5",
+  "orientation": "portrait-primary",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
