@@ -1,0 +1,2795 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CDEJ BF0959 — Centres de Développement d'Enfants et de Jeunes. Encadrement spirituel, physique, cognitif et socio-émotionnel.">
+<title>CDEJ BF0959 · Centres de Développement d'Enfants et de Jeunes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+    --bleu: #0B3FA5;
+    --bleu-profond: #072a6e;
+    --bleu-clair: #e8f0fe;
+    --orange: #FF6B35;
+    --orange-clair: #fff4e5;
+    --vert: #059669;
+    --vert-clair: #ecfdf5;
+    --violet: #7c3aed;
+    --jaune: #f59e0b;
+    --rouge: #dc2626;
+    --texte: #1e293b;
+    --texte-secondaire: #475569;
+    --blanc: #ffffff;
+    --creme: #fafafa;
+    --bordure: #e2e8f0;
+    --ombre-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --ombre-md: 0 4px 20px rgba(0,0,0,0.08);
+    --ombre-lg: 0 20px 50px rgba(0,0,0,0.12);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background: var(--creme);
+    color: var(--texte);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; }
+
+/* HEADER */
+header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250, 250, 250, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--bordure);
+}
+.header-content {
+    max-width: 1280px; margin: 0 auto;
+    padding: 0.8rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2rem;
+}
+.logo-titre {
+    display: flex; align-items: center; gap: 12px;
+    flex-shrink: 0;
+}
+.logo-img {
+    width: 52px; height: 52px;
+    border-radius: 12px;
+    object-fit: contain;
+    background: var(--blanc);
+    padding: 4px;
+    box-shadow: var(--ombre-sm);
+    border: 1px solid var(--bordure);
+    transition: var(--transition);
+}
+.logo-titre:hover .logo-img {
+    transform: scale(1.05) rotate(-3deg);
+}
+.logo-texte h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--bleu-profond); line-height: 1.1;
+}
+.logo-texte p {
+    font-size: 0.72rem; color: var(--bleu);
+    font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; margin-top: 2px;
+}
+.nav-desktop ul {
+    display: flex; gap: 0.2rem; list-style: none;
+    flex-wrap: wrap;
+}
+.nav-desktop a {
+    color: var(--texte); font-weight: 500; font-size: 0.85rem;
+    padding: 0.5rem 0.85rem; border-radius: var(--radius-sm);
+    transition: var(--transition);
+    display: inline-flex; align-items: center; gap: 5px;
+    white-space: nowrap;
+}
+.nav-desktop a i { color: var(--orange); font-size: 0.8rem; }
+.nav-desktop a:hover { background: var(--bleu-clair); color: var(--bleu); }
+.menu-toggle {
+    display: none;
+    background: var(--blanc); border: 1px solid var(--bordure);
+    color: var(--bleu-profond);
+    width: 44px; height: 44px; border-radius: var(--radius-sm);
+    font-size: 1.15rem;
+    align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.menu-toggle .fa-times { display: none; }
+.menu-toggle.active .fa-bars { display: none; }
+.menu-toggle.active .fa-times { display: block; }
+.nav-mobile {
+    display: none; flex-direction: column;
+    background: var(--blanc);
+    overflow: hidden; max-height: 0;
+    transition: max-height 0.4s ease;
+    border-top: 1px solid var(--bordure);
+}
+.nav-mobile.active { max-height: 600px; }
+.nav-mobile a {
+    padding: 1rem 2rem; color: var(--texte);
+    font-weight: 500; font-size: 0.95rem;
+    display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--bordure);
+}
+.nav-mobile a:last-child { border-bottom: none; }
+.nav-mobile a i { color: var(--orange); width: 20px; }
+
+/* HERO */
+.hero {
+    position: relative;
+    padding: 6rem 2rem 7rem;
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+}
+.hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=1920');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    transform: scale(1.05);
+    animation: heroZoom 20s ease-in-out infinite alternate;
+}
+@keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.15); }
+}
+.hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg,
+        rgba(11, 63, 165, 0.88) 0%,
+        rgba(7, 42, 110, 0.85) 100%);
+    z-index: -1;
+}
+.hero-content {
+    max-width: 900px; margin: 0 auto;
+    position: relative; z-index: 1; color: white;
+}
+.hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 0.4rem 1.1rem; border-radius: 999px;
+    font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+.hero-badge i { color: #ffd966; }
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.4rem; font-weight: 700;
+    color: white; line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.hero h1 .accent { color: #ffd966; font-style: italic; }
+.hero p.lead {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.92);
+    max-width: 720px; margin: 0 auto 1.8rem;
+    line-height: 1.7;
+}
+.hero-actions {
+    display: flex; gap: 1rem; justify-content: center;
+    flex-wrap: wrap;
+}
+.btn-hero {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 0.9rem 1.8rem; border-radius: 14px;
+    font-weight: 700; font-size: 1rem;
+    transition: var(--transition);
+    border: none; cursor: pointer;
+}
+.btn-hero.primary {
+    background: var(--orange); color: white;
+    box-shadow: 0 10px 30px rgba(255,107,53,0.4);
+}
+.btn-hero.primary:hover {
+    background: #e55a2b;
+    transform: translateY(-2px);
+}
+.btn-hero.secondary {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+}
+.btn-hero.secondary:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+/* SECTIONS */
+.section {
+    max-width: 1280px; margin: 0 auto;
+    padding: 4rem 2rem;
+}
+.section-header {
+    text-align: center; margin-bottom: 3rem;
+}
+.section-header .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem; font-weight: 700;
+    color: var(--orange);
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+.section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 700;
+    color: var(--bleu-profond);
+    letter-spacing: -0.3px; line-height: 1.2;
+    margin-bottom: 0.8rem;
+}
+.section-header p {
+    font-size: 1.05rem; color: var(--texte-secondaire);
+    max-width: 680px; margin: 0 auto;
+    line-height: 1.65;
+}
+
+/* CARTES MISSION */
+.missions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+.carte-mission {
+    background: var(--blanc);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--bordure);
+    transition: var(--transition);
+    display: flex; flex-direction: column;
+}
+.carte-mission:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--ombre-lg);
+}
+.carte-mission-icon {
+    padding: 2rem;
+    text-align: center;
+    color: white;
+}
+.carte-mission-icon i { font-size: 3rem; display: block; }
+.carte-mission.spirituel .carte-mission-icon { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+.carte-mission.physique .carte-mission-icon { background: linear-gradient(135deg, #059669, #10b981); }
+.carte-mission.cognitif .carte-mission-icon { background: linear-gradient(135deg, #0B3FA5, #1e40af); }
+.carte-mission.socio .carte-mission-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.carte-mission-body {
+    padding: 1.5rem; flex: 1;
+    display: flex; flex-direction: column;
+}
+.carte-mission h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--bleu-profond);
+    margin-bottom: 0.6rem;
+}
+.carte-mission p {
+    font-size: 0.92rem; color: var(--texte-secondaire);
+    line-height: 1.6; flex: 1;
+}
+
+/* CARTES ACTIVITÉS */
+.activites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.carte-activite {
+    background: var(--blanc);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--bordure);
+    transition: var(--transition);
+    display: flex; flex-direction: column;
+}
+.carte-activite:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--ombre-lg);
+}
+.carte-activite-image {
+    width: 100%; height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+.carte-activite-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.carte-activite:hover .carte-activite-image img { transform: scale(1.08); }
+.carte-activite-tag {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--orange); color: white;
+    padding: 0.3rem 0.8rem; border-radius: 999px;
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.5px; text-transform: uppercase;
+}
+.carte-activite-body { padding: 1.5rem; }
+.carte-activite h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 700;
+    color: var(--bleu-profond);
+    margin-bottom: 0.5rem;
+}
+.carte-activite p {
+    font-size: 0.9rem; color: var(--texte-secondaire);
+    line-height: 1.6;
+}
+
+/* PARRAINAGE */
+.parrainage-section {
+    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-profond) 100%);
+    color: white;
+    padding: 5rem 2rem;
+    margin: 4rem 0;
+}
+.parrainage-content {
+    max-width: 1100px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.parrainage-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 700;
+    color: white; line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.parrainage-text h2 .accent { color: #ffd966; font-style: italic; }
+.parrainage-text p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+.parrainage-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+.parrainage-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
+}
+.parrainage-list i {
+    color: #ffd966;
+    font-size: 1rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+.btn-parrainage {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 0.9rem 1.8rem;
+    background: #ffd966; color: var(--bleu-profond);
+    border: none; border-radius: 14px;
+    font-weight: 700; font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.btn-parrainage:hover {
+    background: #ffc933;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(255,217,102,0.3);
+}
+.parrainage-visual {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+.parrainage-visual i {
+    font-size: 5rem;
+    color: #ffd966;
+    margin-bottom: 1rem;
+    display: block;
+}
+.parrainage-visual h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; color: white;
+    margin-bottom: 0.8rem;
+}
+.parrainage-visual p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+
+/* VIDÉO */
+.video-wrapper {
+    max-width: 900px; margin: 0 auto;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--ombre-lg);
+    background: #000;
+}
+.video-wrapper video {
+    width: 100%; display: block;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+/* GALERIE */
+.carrousel-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--ombre-lg);
+    background: var(--bleu-profond);
+    aspect-ratio: 16/10;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.carrousel {
+    display: flex; height: 100%;
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.18, 1);
+}
+.slide {
+    min-width: 100%; height: 100%;
+    position: relative; overflow: hidden;
+}
+.slide img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+}
+.slide-legende {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: white; padding: 2rem 1.5rem 1.2rem;
+    font-weight: 600; text-align: center;
+    font-size: 1.05rem;
+}
+.carrousel-btn {
+    position: absolute; top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.95);
+    color: var(--bleu-profond);
+    border: none;
+    width: 46px; height: 46px;
+    border-radius: 50%; cursor: pointer;
+    font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10;
+    box-shadow: var(--ombre-md);
+    transition: var(--transition);
+}
+.carrousel-btn:hover {
+    background: var(--orange); color: white;
+    transform: translateY(-50%) scale(1.08);
+}
+.carrousel-btn.prev { left: 1rem; }
+.carrousel-btn.next { right: 1rem; }
+.carrousel-dots {
+    position: absolute; bottom: 1.25rem;
+    left: 50%; transform: translateX(-50%);
+    display: flex; gap: 8px; z-index: 10;
+    padding: 0.5rem 0.9rem;
+    background: rgba(0,0,0,0.4);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+}
+.dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer; border: none;
+    transition: var(--transition);
+}
+.dot.active { background: #ffd966; width: 24px; border-radius: 4px; }
+
+/* TÉMOIGNAGES */
+.temoignages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.temoignage {
+    background: var(--blanc);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border: 1px solid var(--bordure);
+    position: relative;
+    transition: var(--transition);
+}
+.temoignage:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--ombre-md);
+}
+.temoignage::before {
+    content: '\201C';
+    position: absolute;
+    top: -10px; left: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: var(--orange);
+    opacity: 0.25;
+    line-height: 1;
+}
+.temoignage-texte {
+    font-size: 0.95rem;
+    color: var(--texte);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+.temoignage-auteur {
+    display: flex; align-items: center; gap: 12px;
+    padding-top: 1rem;
+    border-top: 1px solid var(--bordure);
+}
+.temoignage-auteur .avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--bleu);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1.1rem;
+    flex-shrink: 0;
+}
+.temoignage-auteur h4 {
+    font-size: 0.95rem;
+    color: var(--bleu-profond);
+    margin-bottom: 0.15rem;
+}
+.temoignage-auteur p {
+    font-size: 0.8rem;
+    color: var(--texte-secondaire);
+}
+
+/* FAQ */
+.faq-liste {
+    max-width: 800px; margin: 0 auto;
+}
+.faq-item {
+    background: var(--blanc);
+    border-radius: var(--radius-md);
+    margin-bottom: 0.8rem;
+    border: 1px solid var(--bordure);
+    overflow: hidden;
+    transition: var(--transition);
+}
+.faq-item.open {
+    box-shadow: var(--ombre-md);
+    border-color: var(--bleu);
+}
+.faq-question {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bleu-profond);
+    cursor: pointer;
+    display: flex; justify-content: space-between;
+    align-items: center; gap: 1rem;
+    transition: var(--transition);
+}
+.faq-question:hover { color: var(--bleu); }
+.faq-question i {
+    color: var(--orange);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+.faq-item.open .faq-question i { transform: rotate(180deg); }
+.faq-reponse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 1.5rem;
+}
+.faq-item.open .faq-reponse {
+    max-height: 400px;
+    padding: 0 1.5rem 1.2rem;
+}
+.faq-reponse p {
+    font-size: 0.95rem;
+    color: var(--texte-secondaire);
+    line-height: 1.7;
+}
+
+/* CALENDRIER */
+.calendrier-wrapper {
+    max-width: 500px; margin: 0 auto;
+    background: var(--blanc);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--ombre-md);
+    border: 1px solid var(--bordure);
+}
+.calendrier-header {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 1.2rem;
+}
+.calendrier-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; color: var(--bleu-profond);
+    text-transform: capitalize;
+}
+.calendrier-nav { display: flex; gap: 0.5rem; }
+.calendrier-nav button {
+    width: 38px; height: 38px;
+    border-radius: 50%; border: 1px solid var(--bordure);
+    background: var(--blanc); color: var(--bleu);
+    cursor: pointer; transition: var(--transition);
+    display: flex; align-items: center; justify-content: center;
+}
+.calendrier-nav button:hover { background: var(--bleu); color: white; }
+.calendrier-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+.calendrier-jour-semaine {
+    text-align: center;
+    font-size: 0.75rem; font-weight: 700;
+    color: var(--texte-secondaire);
+    padding: 0.4rem 0;
+    text-transform: uppercase;
+}
+.calendrier-cell {
+    aspect-ratio: 1;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 8px;
+    font-size: 0.9rem; font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none; background: transparent;
+    color: var(--texte);
+    font-family: inherit;
+}
+.calendrier-cell:hover { background: var(--bleu-clair); color: var(--bleu); }
+.calendrier-cell.vide { visibility: hidden; cursor: default; }
+.calendrier-cell.aujourdhui {
+    background: var(--orange); color: white;
+    font-weight: 800;
+}
+.calendrier-cell.note { position: relative; }
+.calendrier-cell.note::after {
+    content: '';
+    position: absolute;
+    bottom: 4px; left: 50%; transform: translateX(-50%);
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--vert);
+}
+
+/* CALCULATRICE */
+.calculatrice-wrapper {
+    max-width: 500px; margin: 0 auto;
+    background: var(--blanc);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--ombre-md);
+    border: 1px solid var(--bordure);
+}
+.calc-tabs {
+    display: flex; gap: 0.3rem;
+    background: #f1f5f9;
+    padding: 0.3rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+.calc-tab {
+    flex: 1;
+    padding: 0.6rem 0.4rem;
+    border: none; background: transparent;
+    font-weight: 600; font-size: 0.82rem;
+    color: var(--texte-secondaire);
+    border-radius: 8px; cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+}
+.calc-tab.active {
+    background: var(--blanc);
+    color: var(--bleu);
+    box-shadow: var(--ombre-sm);
+}
+.calc-ecran {
+    background: #1e293b;
+    color: white;
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: right;
+}
+.calc-ecran-secondaire {
+    font-size: 0.85rem; color: #94a3b8;
+    min-height: 20px; margin-bottom: 0.3rem;
+    font-family: 'Consolas', monospace;
+    word-break: break-all;
+}
+.calc-ecran-principal {
+    font-size: 2rem; font-weight: 700;
+    font-family: 'Consolas', monospace;
+    word-break: break-all;
+}
+.calc-panneau { display: none; }
+.calc-panneau.active { display: block; }
+.calc-grille {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+.calc-btn {
+    padding: 1rem;
+    font-size: 1rem; font-weight: 600;
+    border-radius: 10px; border: none;
+    background: #f1f5f9; color: var(--texte);
+    cursor: pointer; transition: var(--transition);
+    font-family: inherit;
+}
+.calc-btn:hover { background: #e2e8f0; }
+.calc-btn.operator { background: var(--bleu-clair); color: var(--bleu); }
+.calc-btn.operator:hover { background: var(--bleu); color: white; }
+.calc-btn.egal { background: var(--orange); color: white; grid-column: span 2; }
+.calc-btn.egal:hover { background: #e55a2b; }
+.calc-btn.effacer { background: #fef2f2; color: var(--rouge); }
+.calc-btn.effacer:hover { background: var(--rouge); color: white; }
+.calc-champ {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid var(--bordure);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+}
+.calc-champ:focus { outline: none; border-color: var(--bleu); }
+.calc-resultat {
+    background: var(--vert-clair);
+    border-left: 4px solid var(--vert);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #064e3b;
+    margin-top: 0.7rem;
+    display: none;
+}
+.calc-resultat.visible { display: block; }
+.calc-label {
+    font-size: 0.82rem; font-weight: 600;
+    color: var(--texte-secondaire);
+    margin-bottom: 0.3rem; display: block;
+}
+
+/* TABLEAU */
+.table-wrapper {
+    background: var(--blanc);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--ombre-md);
+    border: 1px solid var(--bordure);
+}
+.table-toolbar {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid var(--bordure);
+    display: flex; gap: 1rem;
+    align-items: center; flex-wrap: wrap;
+}
+.table-search {
+    flex: 1; min-width: 200px;
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+    border: 1.5px solid var(--bordure);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    background: #f8fafc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748b' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E") no-repeat 12px center;
+}
+.table-search:focus { outline: none; border-color: var(--bleu); }
+.table-count {
+    font-size: 0.85rem; font-weight: 600;
+    color: var(--texte-secondaire);
+}
+.table-scroll { overflow-x: auto; }
+.data-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.92rem;
+}
+.data-table thead th {
+    background: var(--bleu); color: white;
+    padding: 1rem 1.2rem;
+    text-align: left; font-weight: 700;
+    font-size: 0.85rem; text-transform: uppercase;
+    letter-spacing: 0.5px; white-space: nowrap;
+}
+.data-table tbody td {
+    padding: 0.9rem 1.2rem;
+    border-bottom: 1px solid var(--bordure);
+}
+.data-table tbody tr:last-child td { border-bottom: none; }
+.data-table tbody tr:hover { background: #f8fafc; }
+.badge-table {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase;
+}
+.badge-actif { background: var(--vert-clair); color: var(--vert); }
+.badge-inactif { background: #f1f5f9; color: #64748b; }
+
+/* CONTACT */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 2rem;
+    max-width: 1000px; margin: 0 auto;
+}
+.contact-info {
+    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-profond) 100%);
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+.contact-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+.contact-item {
+    display: flex; gap: 0.9rem;
+    margin-bottom: 1.2rem; align-items: flex-start;
+}
+.contact-item i {
+    color: #ffd966;
+    font-size: 1.1rem;
+    width: 24px; text-align: center;
+    flex-shrink: 0; margin-top: 3px;
+}
+.contact-item .label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7; margin-bottom: 0.15rem;
+}
+.contact-item .value {
+    font-weight: 500; font-size: 0.95rem;
+}
+.form-card {
+    background: var(--blanc);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--ombre-md);
+    border: 1px solid var(--bordure);
+}
+.form-group { margin-bottom: 1rem; }
+.form-group label {
+    display: block;
+    font-size: 0.85rem; font-weight: 600;
+    color: var(--bleu-profond);
+    margin-bottom: 0.4rem;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--bordure);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: var(--blanc);
+    transition: var(--transition);
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--bleu);
+    box-shadow: 0 0 0 3px rgba(11,63,165,0.08);
+}
+.form-group textarea { resize: vertical; min-height: 90px; }
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background: var(--orange);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.btn-submit:hover {
+    background: #e55a2b;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255,107,53,0.3);
+}
+
+/* FOOTER */
+footer {
+    background: #0f172a;
+    color: rgba(255,255,255,0.75);
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+}
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-col h4 {
+    color: white;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 700;
+    margin-bottom: 1rem;
+}
+.footer-col p, .footer-col a {
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.7);
+    transition: var(--transition);
+}
+.footer-col a:hover { color: #ffd966; }
+.footer-col .footer-logo {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 1rem;
+}
+.footer-col .footer-logo img {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: white;
+    padding: 3px;
+    object-fit: contain;
+}
+.footer-col .footer-logo strong {
+    color: white;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+}
+.footer-copyright {
+    max-width: 1280px;
+    margin: 2rem auto 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+}
+.footer-copyright span { color: #ffd966; font-weight: 600; }
+
+/* LIGHTBOX */
+.lightbox {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    display: flex; align-items: center; justify-content: center;
+    padding: 2rem;
+    opacity: 0; visibility: hidden;
+    transition: var(--transition);
+    cursor: zoom-out;
+}
+.lightbox.active { opacity: 1; visibility: visible; }
+.lightbox img {
+    max-width: 90vw; max-height: 85vh;
+    border-radius: var(--radius-md);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    transform: scale(0.95);
+    transition: var(--transition);
+}
+.lightbox.active img { transform: scale(1); }
+.lightbox-close {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    width: 46px; height: 46px;
+    border-radius: 50%; cursor: pointer;
+    font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center;
+}
+.lightbox-close:hover { background: var(--orange); }
+
+/* CHATBOT */
+.chat-toggle {
+    position: fixed;
+    bottom: 1.5rem; right: 1.5rem;
+    width: 62px; height: 62px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bleu), var(--bleu-profond));
+    color: white;
+    font-size: 1.6rem;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 10px 30px rgba(11,63,165,0.45);
+    z-index: 1000;
+    transition: var(--transition);
+    border: 3px solid white;
+    cursor: pointer;
+}
+.chat-toggle:hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 40px rgba(11,63,165,0.55);
+}
+.chat-toggle .fa-times { display: none; }
+.chat-toggle.active .fa-comment-dots { display: none; }
+.chat-toggle.active .fa-times { display: block; }
+.chat-toggle::after {
+    content: '';
+    position: absolute;
+    top: 2px; right: 2px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #25D366;
+    border: 2px solid white;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0.8; }
+}
+
+.chat-window {
+    position: fixed;
+    bottom: 6.5rem;
+    right: 1.5rem;
+    width: 380px;
+    max-width: calc(100vw - 2rem);
+    height: 560px;
+    max-height: calc(100vh - 9rem);
+    background: var(--blanc);
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(20px) scale(0.95);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+.chat-window.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+.chat-header {
+    background: linear-gradient(135deg, var(--bleu), var(--bleu-profond));
+    color: white;
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+.chat-header .chat-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: white;
+    color: var(--bleu);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    position: relative;
+}
+.chat-header .chat-avatar::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 11px; height: 11px;
+    background: #25D366;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+.chat-header-text h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+}
+.chat-header-text p {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.8);
+}
+.chat-header-close {
+    margin-left: auto;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+.chat-header-close:hover {
+    background: rgba(255,255,255,0.3);
+    transform: rotate(90deg);
+}
+.chat-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+.chat-message {
+    display: flex;
+    gap: 0.6rem;
+    max-width: 90%;
+    animation: msgIn 0.3s ease;
+}
+@keyframes msgIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.chat-message.user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+.chat-message-avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+.chat-message.bot .chat-message-avatar {
+    background: var(--bleu);
+    color: white;
+}
+.chat-message.user .chat-message-avatar {
+    background: var(--orange);
+    color: white;
+}
+.chat-bubble {
+    background: white;
+    padding: 0.75rem 1rem;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--texte);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+.chat-message.user .chat-bubble {
+    background: var(--bleu);
+    color: white;
+}
+.chat-bubble p { margin: 0.4rem 0; }
+.chat-bubble p:first-child { margin-top: 0; }
+.chat-bubble p:last-child { margin-bottom: 0; }
+.chat-bubble strong { font-weight: 700; }
+.chat-bubble ul, .chat-bubble ol {
+    margin: 0.4rem 0 0.4rem 1.2rem;
+    padding: 0;
+}
+.chat-bubble li { margin-bottom: 0.2rem; }
+.chat-bubble a {
+    color: var(--orange);
+    text-decoration: underline;
+}
+.chat-typing {
+    display: flex;
+    gap: 4px;
+    padding: 0.7rem 0;
+    align-items: center;
+}
+.chat-typing span {
+    width: 7px; height: 7px;
+    background: var(--bleu);
+    border-radius: 50%;
+    animation: bounce 1.2s infinite;
+}
+.chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+.chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes bounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+    30% { transform: translateY(-6px); opacity: 1; }
+}
+.chat-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0 1rem 0.6rem;
+    background: #f8fafc;
+}
+.chat-suggestion {
+    background: white;
+    border: 1px solid var(--bordure);
+    color: var(--bleu);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+}
+.chat-suggestion:hover {
+    background: var(--bleu);
+    color: white;
+    border-color: var(--bleu);
+}
+.chat-input-zone {
+    padding: 0.8rem 1rem;
+    background: white;
+    border-top: 1px solid var(--bordure);
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+.chat-input {
+    flex: 1;
+    border: 1.5px solid var(--bordure);
+    border-radius: 12px;
+    padding: 0.7rem 0.9rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: none;
+    max-height: 100px;
+    min-height: 42px;
+    transition: var(--transition);
+    color: var(--texte);
+}
+.chat-input:focus {
+    outline: none;
+    border-color: var(--bleu);
+}
+.chat-send {
+    background: var(--bleu);
+    color: white;
+    border: none;
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+.chat-send:hover:not(:disabled) {
+    background: var(--orange);
+    transform: translateY(-2px);
+}
+.chat-send:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ANIMATIONS */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .missions-grid { grid-template-columns: repeat(2, 1fr); }
+    .activites-grid { grid-template-columns: repeat(2, 1fr); }
+    .temoignages-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .parrainage-content { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 768px) {
+    .header-content { padding: 0.7rem 1.25rem; gap: 1rem; }
+    .nav-desktop { display: none; }
+    .menu-toggle { display: flex; }
+    .nav-mobile { display: flex; }
+    .logo-img { width: 44px; height: 44px; }
+    .logo-texte h1 { font-size: 1.15rem; }
+    .logo-texte p { font-size: 0.62rem; letter-spacing: 1px; }
+    .hero { padding: 4rem 1.25rem 5rem; }
+    .hero h1 { font-size: 2rem; }
+    .hero p.lead { font-size: 1rem; }
+    .btn-hero { padding: 0.8rem 1.4rem; font-size: 0.9rem; }
+    .section { padding: 3rem 1.25rem; }
+    .section-header h2 { font-size: 1.85rem; }
+    .section-header p { font-size: 0.95rem; }
+    .missions-grid { grid-template-columns: 1fr; }
+    .activites-grid { grid-template-columns: 1fr; }
+    .parrainage-section { padding: 3rem 1.25rem; }
+    .parrainage-text h2 { font-size: 1.85rem; }
+    .parrainage-visual { padding: 1.5rem; }
+    .parrainage-visual i { font-size: 3.5rem; }
+    .calendrier-wrapper, .calculatrice-wrapper { padding: 1rem; }
+    .carrousel-btn { width: 38px; height: 38px; font-size: 0.85rem; }
+    .carrousel-btn.prev { left: 0.6rem; }
+    .carrousel-btn.next { right: 0.6rem; }
+    .slide-legende { font-size: 0.9rem; padding: 1.5rem 1rem 0.8rem; }
+    .footer-content { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-info, .form-card { padding: 1.5rem; }
+
+    .chat-window {
+        bottom: 5.5rem;
+        right: 1rem;
+        left: 1rem;
+        width: auto;
+        max-width: none;
+        height: calc(100vh - 7rem);
+        max-height: none;
+    }
+    .chat-toggle {
+        width: 54px; height: 54px;
+        font-size: 1.4rem;
+        bottom: 1rem; right: 1rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header>
+    <div class="header-content">
+        <a href="#" class="logo-titre">
+            <img src="logo.png" alt="Logo CDEJ BF0959" class="logo-img" id="logoHeader">
+            <div class="logo-texte">
+                <h1>CDEJ BF0959</h1>
+                <p>Enfants & Jeunes</p>
+            </div>
+        </a>
+
+        <nav class="nav-desktop">
+            <ul>
+                <li><a href="#mission"><i class="fas fa-bullseye"></i> Mission</a></li>
+                <li><a href="#activites"><i class="fas fa-hands-helping"></i> Activités</a></li>
+                <li><a href="#parrainage"><i class="fas fa-hand-holding-heart"></i> Parrainage</a></li>
+                <li><a href="#video"><i class="fas fa-video"></i> Vidéo</a></li>
+                <li><a href="#galerie"><i class="fas fa-images"></i> Galerie</a></li>
+                <li><a href="#calendrier"><i class="fas fa-calendar-alt"></i> Calendrier</a></li>
+                <li><a href="#calculatrice"><i class="fas fa-calculator"></i> Outils</a></li>
+                <li><a href="#tableau"><i class="fas fa-table"></i> Membres</a></li>
+                <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <nav class="nav-mobile" id="navMobile">
+        <a href="#mission"><i class="fas fa-bullseye"></i> Mission</a>
+        <a href="#activites"><i class="fas fa-hands-helping"></i> Activités</a>
+        <a href="#parrainage"><i class="fas fa-hand-holding-heart"></i> Parrainage</a>
+        <a href="#video"><i class="fas fa-video"></i> Vidéo</a>
+        <a href="#galerie"><i class="fas fa-images"></i> Galerie</a>
+        <a href="#calendrier"><i class="fas fa-calendar-alt"></i> Calendrier</a>
+        <a href="#calculatrice"><i class="fas fa-calculator"></i> Outils</a>
+        <a href="#tableau"><i class="fas fa-table"></i> Membres</a>
+        <a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">
+            <i class="fas fa-dove"></i> CDEJ BF0959 · BURKINA FASO
+        </div>
+        <h1>Accompagner chaque enfant vers <span class="accent">son plein potentiel</span></h1>
+        <p class="lead">
+            Le CDEJ BF0959 accompagne les enfants et les jeunes issus de milieux vulnérables
+            vers une autonomie complète et un épanouissement personnel à travers quatre axes
+            de développement.
+        </p>
+        <div class="hero-actions">
+            <a href="#mission" class="btn-hero primary">
+                <i class="fas fa-arrow-down"></i> Découvrir notre mission
+            </a>
+            <a href="#parrainage" class="btn-hero secondary">
+                <i class="fas fa-hand-holding-heart"></i> Parrainer un enfant
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     MISSION
+     ============================================================ -->
+<section class="section" id="mission">
+    <div class="section-header reveal">
+        <span class="eyebrow">Notre mission</span>
+        <h2>Quatre axes de développement holistique</h2>
+        <p>Nous accompagnons les enfants et les jeunes dans toutes les dimensions de leur vie pour construire un avenir solide.</p>
+    </div>
+
+    <div class="missions-grid">
+        <article class="carte-mission spirituel reveal">
+            <div class="carte-mission-icon"><i class="fas fa-praying-hands"></i></div>
+            <div class="carte-mission-body">
+                <h3>Spirituel</h3>
+                <p>Enseignements bibliques et encadrement de la foi pour donner à chaque enfant des repères solides et une espérance.</p>
+            </div>
+        </article>
+
+        <article class="carte-mission physique reveal">
+            <div class="carte-mission-icon"><i class="fas fa-running"></i></div>
+            <div class="carte-mission-body">
+                <h3>Physique</h3>
+                <p>Activités sportives, suivi de la santé et du bien-être pour aider chaque jeune à grandir en bonne santé.</p>
+            </div>
+        </article>
+
+        <article class="carte-mission cognitif reveal">
+            <div class="carte-mission-icon"><i class="fas fa-book-reader"></i></div>
+            <div class="carte-mission-body">
+                <h3>Cognitif</h3>
+                <p>Formations, soutien scolaire et ateliers éducatifs pour développer les compétences et la curiosité intellectuelle.</p>
+            </div>
+        </article>
+
+        <article class="carte-mission socio reveal">
+            <div class="carte-mission-icon"><i class="fas fa-heart"></i></div>
+            <div class="carte-mission-body">
+                <h3>Socio-émotionnel</h3>
+                <p>Développement de la confiance en soi, de l'intelligence émotionnelle et de l'intégration sociale.</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- ============================================================
+     ACTIVITÉS
+     ============================================================ -->
+<section class="section" id="activites">
+    <div class="section-header reveal">
+        <span class="eyebrow">Nos activités</span>
+        <h2>Ce que nous faisons concrètement</h2>
+        <p>Des actions concrètes chaque semaine pour transformer la vie des enfants et des jeunes de notre communauté.</p>
+    </div>
+
+    <div class="activites-grid">
+        <article class="carte-activite reveal">
+            <div class="carte-activite-image">
+                <span class="carte-activite-tag">Hebdomadaire</span>
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800" alt="Atelier éducatif">
+            </div>
+            <div class="carte-activite-body">
+                <h3>Ateliers éducatifs</h3>
+                <p>Séances hebdomadaires de lecture, écriture et mathématiques animées par des encadreurs bénévoles.</p>
+            </div>
+        </article>
+
+        <article class="carte-activite reveal">
+            <div class="carte-activite-image">
+                <span class="carte-activite-tag">Sport</span>
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800" alt="Activités sportives">
+            </div>
+            <div class="carte-activite-body">
+                <h3>Activités sportives</h3>
+                <p>Football, athlétisme et jeux collectifs pour renforcer la santé physique et l'esprit d'équipe.</p>
+            </div>
+        </article>
+
+        <article class="carte-activite reveal">
+            <div class="carte-activite-image">
+                <span class="carte-activite-tag">Spiritualité</span>
+                <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800" alt="Enseignement spirituel">
+            </div>
+            <div class="carte-activite-body">
+                <h3>Enseignements spirituels</h3>
+                <p>Temps de partage, histoires bibliques et accompagnement de la foi adaptés à chaque tranche d'âge.</p>
+            </div>
+        </article>
+
+        <article class="carte-activite reveal">
+            <div class="carte-activite-image">
+                <span class="carte-activite-tag">Santé</span>
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800" alt="Suivi de santé">
+            </div>
+            <div class="carte-activite-body">
+                <h3>Suivi santé</h3>
+                <p>Consultations régulières et campagnes de sensibilisation à l'hygiène pour protéger la santé des enfants.</p>
+            </div>
+        </article>
+
+        <article class="carte-activite reveal">
+            <div class="carte-activite-image">
+                <span class="carte-activite-tag">Arts</span>
+                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800" alt="Ateliers artistiques">
+            </div>
+            <div class="carte-activite-body">
+                <h3>Ateliers artistiques</h3>
+                <p>Dessin, chant, danse et théâtre pour permettre aux enfants d'exprimer leur créativité et leur confiance.</p>
+            </div>
+        </article>
+
+        <article class="carte-activite reveal">
+            <div class="carte-activite-image">
+                <span class="carte-activite-tag">Sorties</span>
+                <img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37?w=800" alt="Sorties éducatives">
+            </div>
+            <div class="carte-activite-body">
+                <h3>Sorties éducatives</h3>
+                <p>Visites de sites, sorties culturelles et camps pour élargir les horizons et créer des souvenirs.</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- ============================================================
+     PARRAINAGE
+     ============================================================ -->
+<section class="parrainage-section" id="parrainage">
+    <div class="parrainage-content">
+        <div class="parrainage-text reveal">
+            <h2>Parrainez un enfant, <span class="accent">changez une vie</span></h2>
+            <p>Le parrainage est un engagement simple et puissant : vous accompagnez un enfant dans son parcours, vous participez à ses repas, sa scolarité, ses soins et son développement spirituel.</p>
+            <ul class="parrainage-list">
+                <li><i class="fas fa-check-circle"></i> <span>Suivi personnalisé de l'enfant que vous parrainez</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Photos, nouvelles et lettres de l'enfant</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Rapport d'utilisation des fonds (transparence totale)</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Visite possible au centre sur rendez-vous</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Avantages fiscaux selon la réglementation en vigueur</span></li>
+            </ul>
+            <button class="btn-parrainage" id="btnParrainage">
+                <i class="fas fa-hand-holding-heart"></i> Je veux parrainer
+            </button>
+        </div>
+
+        <div class="parrainage-visual reveal">
+            <i class="fas fa-hands-helping"></i>
+            <h3>Un enfant, un avenir</h3>
+            <p>Votre contribution, quelle que soit sa forme, transforme concrètement la vie d'un enfant du CDEJ BF0959.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     VIDÉO
+     ============================================================ -->
+<section class="section" id="video">
+    <div class="section-header reveal">
+        <span class="eyebrow">Présentation</span>
+        <h2>Découvrez le CDEJ BF0959 en vidéo</h2>
+        <p>Un aperçu de notre quotidien, de nos activités et de l'impact que nous avons dans la vie des enfants.</p>
+    </div>
+
+    <div class="video-wrapper reveal">
+        <video controls poster="/images/videocover.png">
+            <source src="/videos/saba.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+    </div>
+</section>
+
+<!-- ============================================================
+     GALERIE
+     ============================================================ -->
+<section class="section" id="galerie">
+    <div class="section-header reveal">
+        <span class="eyebrow">Galerie</span>
+        <h2>Nos plus beaux moments</h2>
+        <p>Des souvenirs de nos activités, sorties et célébrations avec les enfants et les jeunes.</p>
+    </div>
+
+    <div class="carrousel-wrapper reveal">
+        <div class="carrousel" id="carrousel">
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=1200" alt="Enfants en activité">
+                <div class="slide-legende">Activités éducatives du CDEJ</div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200" alt="Atelier créatif">
+                <div class="slide-legende">Ateliers créatifs avec les enfants</div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200" alt="Sport collectif">
+                <div class="slide-legende">Journée sportive</div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1200" alt="Sortie éducative">
+                <div class="slide-legende">Sortie éducative annuelle</div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=1200" alt="Célébration">
+                <div class="slide-legende">Célébration de fin d'année</div>
+            </div>
+        </div>
+        <button class="carrousel-btn prev" id="prevBtn" aria-label="Précédent">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carrousel-btn next" id="nextBtn" aria-label="Suivant">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="carrousel-dots" id="dots"></div>
+    </div>
+</section>
+
+<!-- ============================================================
+     TÉMOIGNAGES
+     ============================================================ -->
+<section class="section" id="temoignages">
+    <div class="section-header reveal">
+        <span class="eyebrow">Témoignages</span>
+        <h2>Ils parlent du CDEJ</h2>
+        <p>Enfants, parents, parrains et encadreurs racontent leur expérience.</p>
+    </div>
+
+    <div class="temoignages-grid">
+        <article class="temoignage reveal">
+            <p class="temoignage-texte">Depuis que je viens au CDEJ, j'ai appris à lire, à prier et à jouer avec les autres. Les encadreurs sont gentils et me font sentir chez moi.</p>
+            <div class="temoignage-auteur">
+                <div class="avatar">A</div>
+                <div>
+                    <h4>Awa, 10 ans</h4>
+                    <p>Enfant parrainée depuis 2 ans</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="temoignage reveal">
+            <p class="temoignage-texte">Parrainer un enfant du CDEJ BF0959 a été une décision qui m'a changé. Recevoir une lettre ou une photo chaque trimestre, c'est un bonheur simple et profond.</p>
+            <div class="temoignage-auteur">
+                <div class="avatar" style="background:var(--violet);">M</div>
+                <div>
+                    <h4>Mme Sawadogo</h4>
+                    <p>Marraine depuis 2024</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="temoignage reveal">
+            <p class="temoignage-texte">Être encadreur, c'est voir chaque semaine des enfants s'épanouir. C'est un engagement exigeant, mais tellement gratifiant humainement.</p>
+            <div class="temoignage-auteur">
+                <div class="avatar" style="background:var(--vert);">K</div>
+                <div>
+                    <h4>Kofi</h4>
+                    <p>Encadreur bénévole</p>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- ============================================================
+     CALENDRIER
+     ============================================================ -->
+<section class="section" id="calendrier">
+    <div class="section-header reveal">
+        <span class="eyebrow">Planification</span>
+        <h2>Calendrier des activités</h2>
+        <p>Consultez les dates importantes et les activités prévues au CDEJ.</p>
+    </div>
+
+    <div class="calendrier-wrapper reveal">
+        <div class="calendrier-header">
+            <h3 id="calendrierMois">Janvier 2026</h3>
+            <div class="calendrier-nav">
+                <button id="calendrierPrev" aria-label="Mois précédent">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="calendrierNext" aria-label="Mois suivant">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="calendrier-grid" id="calendrierGrid"></div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CALCULATRICE
+     ============================================================ -->
+<section class="section" id="calculatrice">
+    <div class="section-header reveal">
+        <span class="eyebrow">Outils</span>
+        <h2>Calculatrices utiles</h2>
+        <p>Quatre modes de calcul pour la gestion quotidienne du CDEJ : standard, TVA, moyenne et surfaces.</p>
+    </div>
+
+    <div class="calculatrice-wrapper reveal">
+        <div class="calc-tabs">
+            <button class="calc-tab active" data-calc-tab="standard">Standard</button>
+            <button class="calc-tab" data-calc-tab="tva">TVA</button>
+            <button class="calc-tab" data-calc-tab="moyenne">Moyenne</button>
+            <button class="calc-tab" data-calc-tab="surface">Surface</button>
+        </div>
+
+        <div class="calc-panneau active" data-calc-panel="standard">
+            <div class="calc-ecran">
+                <div class="calc-ecran-secondaire" id="calcSecondaire"></div>
+                <div class="calc-ecran-principal" id="calcPrincipal">0</div>
+            </div>
+            <div class="calc-grille">
+                <button class="calc-btn effacer" data-calc-action="clear">C</button>
+                <button class="calc-btn" data-calc-action="sign">±</button>
+                <button class="calc-btn operator" data-calc-action="percent">%</button>
+                <button class="calc-btn operator" data-calc-value="/">÷</button>
+                <button class="calc-btn" data-calc-value="7">7</button>
+                <button class="calc-btn" data-calc-value="8">8</button>
+                <button class="calc-btn" data-calc-value="9">9</button>
+                <button class="calc-btn operator" data-calc-value="*">×</button>
+                <button class="calc-btn" data-calc-value="4">4</button>
+                <button class="calc-btn" data-calc-value="5">5</button>
+                <button class="calc-btn" data-calc-value="6">6</button>
+                <button class="calc-btn operator" data-calc-value="-">−</button>
+                <button class="calc-btn" data-calc-value="1">1</button>
+                <button class="calc-btn" data-calc-value="2">2</button>
+                <button class="calc-btn" data-calc-value="3">3</button>
+                <button class="calc-btn operator" data-calc-value="+">+</button>
+                <button class="calc-btn" data-calc-value="0" style="grid-column: span 2;">0</button>
+                <button class="calc-btn" data-calc-value=".">.</button>
+                <button class="calc-btn egal" data-calc-action="equal">=</button>
+            </div>
+        </div>
+
+        <div class="calc-panneau" data-calc-panel="tva">
+            <label class="calc-label">Montant hors taxe (FCFA)</label>
+            <input type="number" class="calc-champ" id="tvaHT" placeholder="Ex : 50 000" step="any">
+            <label class="calc-label">Taux de TVA (%)</label>
+            <input type="number" class="calc-champ" id="tvaTaux" value="18" step="any">
+            <button class="btn-submit" id="tvaCalculer">
+                <i class="fas fa-calculator"></i> Calculer
+            </button>
+            <div class="calc-resultat" id="tvaResultat"></div>
+        </div>
+
+        <div class="calc-panneau" data-calc-panel="moyenne">
+            <label class="calc-label">Notes séparées par des virgules</label>
+            <input type="text" class="calc-champ" id="moyNotes" placeholder="Ex : 12, 15, 9, 17, 14">
+            <button class="btn-submit" id="moyCalculer">
+                <i class="fas fa-calculator"></i> Calculer la moyenne
+            </button>
+            <div class="calc-resultat" id="moyResultat"></div>
+        </div>
+
+        <div class="calc-panneau" data-calc-panel="surface">
+            <label class="calc-label">Forme</label>
+            <select class="calc-champ" id="surfaceForme">
+                <option value="rectangle">Rectangle</option>
+                <option value="cercle">Cercle</option>
+                <option value="triangle">Triangle</option>
+            </select>
+            <div id="surfaceChampsRectangle">
+                <label class="calc-label">Longueur (m)</label>
+                <input type="number" class="calc-champ" id="surfaceLongueur" placeholder="Ex : 10" step="any">
+                <label class="calc-label">Largeur (m)</label>
+                <input type="number" class="calc-champ" id="surfaceLargeur" placeholder="Ex : 5" step="any">
+            </div>
+            <div id="surfaceChampsCercle" style="display:none;">
+                <label class="calc-label">Rayon (m)</label>
+                <input type="number" class="calc-champ" id="surfaceRayon" placeholder="Ex : 3" step="any">
+            </div>
+            <div id="surfaceChampsTriangle" style="display:none;">
+                <label class="calc-label">Base (m)</label>
+                <input type="number" class="calc-champ" id="surfaceBase" placeholder="Ex : 8" step="any">
+                <label class="calc-label">Hauteur (m)</label>
+                <input type="number" class="calc-champ" id="surfaceHauteur" placeholder="Ex : 4" step="any">
+            </div>
+            <button class="btn-submit" id="surfaceCalculer">
+                <i class="fas fa-calculator"></i> Calculer la surface
+            </button>
+            <div class="calc-resultat" id="surfaceResultat"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     TABLEAU DES MEMBRES
+     ============================================================ -->
+<section class="section" id="tableau">
+    <div class="section-header reveal">
+        <span class="eyebrow">Nos membres</span>
+        <h2>Liste des enfants et encadreurs</h2>
+        <p>Recherchez un membre par son nom, sa catégorie ou son statut.</p>
+    </div>
+
+    <div class="table-wrapper reveal">
+        <div class="table-toolbar">
+            <input type="text" class="table-search" id="tableSearch" placeholder="Rechercher par nom, catégorie, statut...">
+            <span class="table-count" id="tableCount">8 membres</span>
+        </div>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Catégorie</th>
+                        <th>Âge</th>
+                        <th>Responsable</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="section" id="faq">
+    <div class="section-header reveal">
+        <span class="eyebrow">Questions fréquentes</span>
+        <h2>Vous vous demandez peut-être...</h2>
+        <p>Les réponses aux questions les plus courantes sur le CDEJ BF0959.</p>
+    </div>
+
+    <div class="faq-liste">
+        <div class="faq-item reveal">
+            <button class="faq-question">
+                Qu'est-ce qu'un CDEJ ?
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-reponse">
+                <p>Un CDEJ (Centre de Développement d'Enfants et de Jeunes) est une structure d'accueil qui accompagne les enfants et les jeunes issus de milieux vulnérables vers une autonomie complète. Il agit sur quatre axes : spirituel, physique, cognitif et socio-émotionnel.</p>
+            </div>
+        </div>
+
+        <div class="faq-item reveal">
+            <button class="faq-question">
+                Comment devenir parrain ou marraine ?
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-reponse">
+                <p>Cliquez sur le bouton « Je veux parrainer » dans la section Parrainage, ou contactez-nous par WhatsApp. Nous vous enverrons une fiche de présentation d'un enfant ainsi que les modalités de parrainage.</p>
+            </div>
+        </div>
+
+        <div class="faq-item reveal">
+            <button class="faq-question">
+                Comment sont utilisés les dons ?
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-reponse">
+                <p>Les dons servent à financer : les repas des enfants, la scolarité et le matériel scolaire, les soins de santé, les activités éducatives et spirituelles. Un rapport annuel est envoyé à chaque donateur.</p>
+            </div>
+        </div>
+
+        <div class="faq-item reveal">
+            <button class="faq-question">
+                Puis-je visiter le centre ?
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-reponse">
+                <p>Oui, sur rendez-vous. Contactez-nous par WhatsApp ou par le formulaire de contact pour planifier votre visite. Nous serons ravis de vous accueillir et de vous présenter nos activités.</p>
+            </div>
+        </div>
+
+        <div class="faq-item reveal">
+            <button class="faq-question">
+                Comment devenir encadreur bénévole ?
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-reponse">
+                <p>Nous accueillons les bénévoles motivés qui souhaitent accompagner les enfants. Envoyez-nous un message via le formulaire de contact en précisant votre disponibilité et vos compétences. Un entretien suivra.</p>
+            </div>
+        </div>
+
+        <div class="faq-item reveal">
+            <button class="faq-question">
+                Le CDEJ est-il une structure religieuse ?
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-reponse">
+                <p>Oui, le CDEJ BF0959 est porté par une communauté chrétienne protestante. Nous accueillons tous les enfants sans distinction, et l'encadrement spirituel se fait dans le respect des convictions de chacun.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section class="section" id="contact">
+    <div class="section-header reveal">
+        <span class="eyebrow">Contact</span>
+        <h2>Écrivez-nous</h2>
+        <p>Une question, un soutien, une inscription ? Nous vous répondons dans les plus brefs délais.</p>
+    </div>
+
+    <div class="contact-grid">
+        <div class="contact-info reveal">
+            <h3>Nos coordonnées</h3>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <div class="label">Adresse</div>
+                    <div class="value">Burkina Faso · CDEJ BF0959</div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <div class="label">Téléphone</div>
+                    <div class="value">+226 63 58 52 06</div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                    <div class="label">WhatsApp</div>
+                    <div class="value">+226 63 58 52 06</div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <div class="label">Email</div>
+                    <div class="value">contact@cdej-bf0959.org</div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <div class="label">Horaires</div>
+                    <div class="value">Lundi – Samedi · 8h – 18h</div>
+                </div>
+            </div>
+        </div>
+
+        <form class="form-card reveal" id="contactForm">
+            <div class="form-group">
+                <label for="contactNom">Nom complet</label>
+                <input type="text" id="contactNom" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+                <label for="contactEmail">Adresse email</label>
+                <input type="email" id="contactEmail" placeholder="vous@exemple.com" required>
+            </div>
+            <div class="form-group">
+                <label for="contactSujet">Sujet</label>
+                <select id="contactSujet" required>
+                    <option value="">Choisir un sujet</option>
+                    <option value="parrainage">Devenir parrain / marraine</option>
+                    <option value="soutien">Soutenir le CDEJ</option>
+                    <option value="inscription">Inscrire un enfant</option>
+                    <option value="benevolat">Devenir bénévole</option>
+                    <option value="information">Demande d'information</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" placeholder="Votre message..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+                <i class="fab fa-whatsapp"></i> Envoyer par WhatsApp
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Logo CDEJ BF0959">
+                <strong>CDEJ BF0959</strong>
+            </div>
+            <p>Accompagner les enfants et les jeunes issus de milieux vulnérables vers une autonomie complète et un épanouissement personnel.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <a href="#mission">Notre mission</a>
+            <a href="#activites">Nos activités</a>
+            <a href="#parrainage">Parrainage</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+            <h4>Nos axes</h4>
+            <a href="#mission">Spirituel</a>
+            <a href="#mission">Physique</a>
+            <a href="#mission">Cognitif</a>
+            <a href="#mission">Socio-émotionnel</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="#"><i class="fas fa-map-marker-alt"></i> Burkina Faso</a>
+            <a href="#"><i class="fas fa-phone"></i> +226 63 58 52 06</a>
+            <a href="#"><i class="fas fa-envelope"></i> contact@cdej-bf0959.org</a>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        &copy; 2026 <span>CDEJ BF0959</span> — Tous droits réservés.
+    </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">
+        <i class="fas fa-times"></i>
+    </button>
+    <img src="" alt="" id="lightboxImg">
+</div>
+
+<!-- ============================================================
+     CHATBOT TIMOTHÉE
+     ============================================================ -->
+<div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+        <div class="chat-avatar">
+            <i class="fas fa-dove"></i>
+        </div>
+        <div class="chat-header-text">
+            <h4>Timothée</h4>
+            <p>Assistant du CDEJ BF0959 · En ligne</p>
+        </div>
+        <button class="chat-header-close" id="chatClose" aria-label="Fermer">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="chat-body" id="chatBody"></div>
+
+    <div class="chat-suggestions" id="chatSuggestions">
+        <button class="chat-suggestion" data-prompt="Qu'est-ce qu'un CDEJ ?">Qu'est-ce qu'un CDEJ ?</button>
+        <button class="chat-suggestion" data-prompt="Comment devenir parrain ?">Devenir parrain</button>
+        <button class="chat-suggestion" data-prompt="Quelles sont vos activités ?">Vos activités</button>
+        <button class="chat-suggestion" data-prompt="Comment faire un don ?">Faire un don</button>
+    </div>
+
+    <div class="chat-input-zone">
+        <textarea class="chat-input" id="chatInput" placeholder="Posez votre question..." rows="1"></textarea>
+        <button class="chat-send" id="chatSend" aria-label="Envoyer">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+
+<button class="chat-toggle" id="chatToggle" aria-label="Ouvrir le chat">
+    <i class="fas fa-comment-dots"></i>
+    <i class="fas fa-times"></i>
+</button>
+
+<script>
+const GROQ_API_KEY = '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';
+const GROQ_MODEL = 'openai/gpt-oss-120b';
+const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
+
+const TIMOTHEE_PROMPT = `Tu es **Timothée**, l'assistant virtuel officiel du CDEJ BF0959, un Centre de Développement d'Enfants et de Jeunes au Burkina Faso, porté par une communauté chrétienne protestante.
+
+# Ton identité
+- Ton nom est **Timothée**
+- Tu es chaleureux, bienveillant, patient et respectueux
+- Tu parles français avec un ton amical et encourageant
+- Tu incarnes les valeurs du CDEJ : foi, espérance, amour du prochain
+
+# Connaissances sur le CDEJ BF0959
+
+**Identité**
+- CDEJ = Centre de Développement d'Enfants et de Jeunes
+- Code : BF0959 (Burkina Faso, n° 0959)
+- Structure chrétienne protestante
+- Localisation: Burkina Faso, dans la ville de Banfora, quartier Bounouna
+- Mission : Accompagner les enfants et les jeunes issus de milieux vulnérables vers une autonomie complète et un épanouissement personnel.
+
+**Les 4 axes de développement (holistique)**
+1. **Spirituel** : enseignements bibliques et encadrement de la foi
+2. **Physique** : activités sportives, suivi de la santé et du bien-être
+3. **Cognitif** : formations, soutien scolaire et ateliers éducatifs
+4. **Socio-émotionnel** : confiance en soi, intelligence émotionnelle, intégration sociale
+
+**Activités concrètes**
+- Ateliers éducatifs hebdomadaires (lecture, écriture, mathématiques)
+- Activités sportives (football, athlétisme, jeux collectifs)
+- Enseignements spirituels adaptés à chaque âge
+- Suivi santé et sensibilisation à l'hygiène
+- Ateliers artistiques (dessin, chant, danse, théâtre)
+- Sorties éducatives et camps
+
+**Public du site**
+- **Parrainés** : enfants et jeunes qui bénéficient du programme
+- **Parrains / marraines** : personnes qui soutiennent un enfant
+- **Encadreurs** : bénévoles et salariés qui animent les activités
+- **Visiteurs** : personnes intéressées qui peuvent contribuer ou demander à soutenir
+
+**Parrainage**
+- Engagement simple : accompagner un enfant dans son parcours
+- Couvre repas, scolarité, soins, développement spirituel
+- Le parrain reçoit : photos, nouvelles, lettres de l'enfant, rapport d'utilisation des fonds
+- Visite possible au centre sur rendez-vous
+- Avantages fiscaux selon réglementation
+
+**Contact**
+- WhatsApp : +226 63 58 52 06
+- Email : contact@cdej-bf0959.org
+- Localisation : Burkina Faso
+- Horaires : Lundi – Samedi, 8h – 18h
+
+# Tes capacités
+- Répondre aux questions sur le CDEJ, ses activités, ses valeurs
+- Expliquer le parrainage, ses modalités et ses bénéfices
+- Accueillir les visiteurs et les orienter
+- Encourager les personnes à soutenir la cause
+- Répondre avec bienveillance aux questions spirituelles dans le cadre du CDEJ
+- Si quelqu'un veut s'impliquer, l'orienter vers WhatsApp ou le formulaire de contact
+
+# Règles de comportement
+1. **Réponds toujours en français**, avec un ton chaleureux
+2. **Sois concis** : 2-4 phrases pour une question simple
+3. **Utilise du Markdown** (gras, listes) quand c'est utile
+4. **Ne jamais inventer** d'informations — si tu ne sais pas, propose de contacter le CDEJ
+5. **Encourage les visiteurs** à s'impliquer : parrainage, don, bénévolat
+6. **Reste dans ton rôle** : tu es l'assistant du CDEJ, pas un assistant généraliste
+7. **Si on te demande qui tu es** : « Je suis Timothée, l'assistant du CDEJ BF0959. Je suis là pour répondre à vos questions sur notre mission, nos activités, ou le parrainage. »
+
+# Exemples de réponses
+
+**Question :** Qu'est-ce qu'un CDEJ ?
+**Réponse :** Un CDEJ (Centre de Développement d'Enfants et de Jeunes) est une structure qui accompagne les enfants et les jeunes issus de milieux vulnérables vers une autonomie complète. Nous travaillons sur 4 axes : spirituel, physique, cognitif et socio-émotionnel.
+
+**Question :** Comment devenir parrain ?
+**Réponse :** C'est très simple ! Cliquez sur le bouton « Je veux parrainer » dans la section Parrainage, ou contactez-nous directement par WhatsApp. Nous vous enverrons la fiche d'un enfant et les modalités.
+
+**Question :** Que faites-vous concrètement ?
+**Réponse :** Nous organisons chaque semaine des ateliers éducatifs, des activités sportives, des enseignements spirituels et des ateliers artistiques. Nous assurons aussi un suivi santé régulier et des sorties éducatives.
+
+Commence chaque réponse en respectant cette identité.`;
+
+/* ============================================================
+   MENU MOBILE
+   ============================================================ */
+(function() {
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('navMobile');
+    toggle.addEventListener('click', () => {
+        toggle.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            toggle.classList.remove('active');
+            nav.classList.remove('active');
+        });
+    });
+})();
+
+/* ============================================================
+   CARROUSEL
+   ============================================================ */
+(function() {
+    const carrousel = document.getElementById('carrousel');
+    const slides = carrousel.querySelectorAll('.slide');
+    const dotsContainer = document.getElementById('dots');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let autoplayInterval;
+
+    slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.dataset.index = i;
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.dot');
+
+    function updateCarrousel(index) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        currentIndex = index;
+        carrousel.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    }
+
+    function nextSlide() { updateCarrousel(currentIndex + 1); }
+    function prevSlide() { updateCarrousel(currentIndex - 1); }
+
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayInterval = setInterval(nextSlide, 5000);
+    }
+    function stopAutoplay() {
+        if (autoplayInterval) clearInterval(autoplayInterval);
+    }
+
+    nextBtn.addEventListener('click', () => { nextSlide(); startAutoplay(); });
+    prevBtn.addEventListener('click', () => { prevSlide(); startAutoplay(); });
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            updateCarrousel(parseInt(dot.dataset.index));
+            startAutoplay();
+        });
+    });
+
+    const wrapper = document.querySelector('.carrousel-wrapper');
+    wrapper.addEventListener('mouseenter', stopAutoplay);
+    wrapper.addEventListener('mouseleave', startAutoplay);
+
+    let touchStartX = 0;
+    wrapper.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoplay();
+    }, { passive: true });
+    wrapper.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) nextSlide();
+            else prevSlide();
+        }
+        startAutoplay();
+    }, { passive: true });
+
+    updateCarrousel(0);
+    startAutoplay();
+})();
+
+/* ============================================================
+   CALENDRIER
+   ============================================================ */
+(function() {
+    const moisNoms = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+    const joursNoms = ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
+
+    let dateActuelle = new Date();
+    let annee = dateActuelle.getFullYear();
+    let mois = dateActuelle.getMonth();
+    const notes = {};
+
+    function renderCalendrier() {
+        document.getElementById('calendrierMois').textContent = moisNoms[mois] + ' ' + annee;
+        const grid = document.getElementById('calendrierGrid');
+        grid.innerHTML = '';
+
+        joursNoms.forEach(j => {
+            const cell = document.createElement('div');
+            cell.className = 'calendrier-jour-semaine';
+            cell.textContent = j;
+            grid.appendChild(cell);
+        });
+
+        const premierJour = new Date(annee, mois, 1).getDay();
+        const decalage = premierJour === 0 ? 6 : premierJour - 1;
+        const nbJours = new Date(annee, mois + 1, 0).getDate();
+
+        for (let i = 0; i < decalage; i++) {
+            const cell = document.createElement('button');
+            cell.className = 'calendrier-cell vide';
+            grid.appendChild(cell);
+        }
+
+        const aujourdhui = new Date();
+        for (let jour = 1; jour <= nbJours; jour++) {
+            const cell = document.createElement('button');
+            cell.className = 'calendrier-cell';
+            cell.textContent = jour;
+
+            if (jour === aujourdhui.getDate() && mois === aujourdhui.getMonth() && annee === aujourdhui.getFullYear()) {
+                cell.classList.add('aujourdhui');
+            }
+
+            const key = annee + '-' + mois + '-' + jour;
+            if (notes[key]) cell.classList.add('note');
+
+            cell.addEventListener('click', () => {
+                const noteActuelle = notes[key] || '';
+                const nouvelleNote = prompt('Note pour le ' + jour + ' ' + moisNoms[mois] + ' :', noteActuelle);
+                if (nouvelleNote !== null) {
+                    if (nouvelleNote.trim() === '') delete notes[key];
+                    else notes[key] = nouvelleNote.trim();
+                    renderCalendrier();
+                }
+            });
+
+            grid.appendChild(cell);
+        }
+    }
+
+    document.getElementById('calendrierPrev').addEventListener('click', () => {
+        mois--;
+        if (mois < 0) { mois = 11; annee--; }
+        renderCalendrier();
+    });
+    document.getElementById('calendrierNext').addEventListener('click', () => {
+        mois++;
+        if (mois > 11) { mois = 0; annee++; }
+        renderCalendrier();
+    });
+
+    renderCalendrier();
+})();
+
+/* ============================================================
+   CALCULATRICE
+   ============================================================ */
+(function() {
+    document.querySelectorAll('[data-calc-tab]').forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.dataset.calcTab;
+            document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.calc-panneau').forEach(p => p.classList.remove('active'));
+            tab.classList.add('active');
+            document.querySelector('[data-calc-panel="' + target + '"]').classList.add('active');
+        });
+    });
+
+    const principal = document.getElementById('calcPrincipal');
+    const secondaire = document.getElementById('calcSecondaire');
+    let expression = '';
+
+    function updateEcran() { principal.textContent = expression || '0'; }
+
+    document.querySelectorAll('[data-calc-action], [data-calc-value]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (btn.dataset.calcValue !== undefined) {
+                expression += btn.dataset.calcValue;
+                updateEcran();
+            } else {
+                const action = btn.dataset.calcAction;
+                if (action === 'clear') {
+                    expression = '';
+                    secondaire.textContent = '';
+                    updateEcran();
+                } else if (action === 'equal') {
+                    try {
+                        const resultat = eval(expression);
+                        secondaire.textContent = expression + ' =';
+                        principal.textContent = resultat;
+                        expression = String(resultat);
+                    } catch (e) {
+                        principal.textContent = 'Erreur';
+                        expression = '';
+                    }
+                } else if (action === 'sign') {
+                    if (expression.startsWith('-')) expression = expression.slice(1);
+                    else expression = '-' + expression;
+                    updateEcran();
+                } else if (action === 'percent') {
+                    try {
+                        const resultat = eval(expression) / 100;
+                        principal.textContent = resultat;
+                        expression = String(resultat);
+                    } catch (e) { principal.textContent = 'Erreur'; expression = ''; }
+                }
+            }
+        });
+    });
+
+    document.getElementById('tvaCalculer').addEventListener('click', () => {
+        const ht = parseFloat(document.getElementById('tvaHT').value);
+        const taux = parseFloat(document.getElementById('tvaTaux').value);
+        const res = document.getElementById('tvaResultat');
+        if (isNaN(ht) || isNaN(taux)) {
+            res.textContent = 'Veuillez entrer des valeurs valides.';
+            res.classList.add('visible'); return;
+        }
+        const tva = ht * taux / 100;
+        const ttc = ht + tva;
+        res.innerHTML = '<strong>Montant HT :</strong> ' + ht.toLocaleString('fr-FR') + ' FCFA<br>' +
+                        '<strong>TVA (' + taux + '%) :</strong> ' + tva.toLocaleString('fr-FR') + ' FCFA<br>' +
+                        '<strong>Montant TTC :</strong> ' + ttc.toLocaleString('fr-FR') + ' FCFA';
+        res.classList.add('visible');
+    });
+
+    document.getElementById('moyCalculer').addEventListener('click', () => {
+        const notesStr = document.getElementById('moyNotes').value;
+        const res = document.getElementById('moyResultat');
+        const notes = notesStr.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
+        if (notes.length === 0) {
+            res.textContent = 'Veuillez entrer des notes séparées par des virgules.';
+            res.classList.add('visible'); return;
+        }
+        const somme = notes.reduce((a, b) => a + b, 0);
+        const moyenne = somme / notes.length;
+        res.innerHTML = '<strong>Notes :</strong> ' + notes.join(', ') + '<br>' +
+                        '<strong>Moyenne :</strong> ' + moyenne.toFixed(2) + ' / 20';
+        res.classList.add('visible');
+    });
+
+    document.getElementById('surfaceForme').addEventListener('change', (e) => {
+        document.getElementById('surfaceChampsRectangle').style.display = 'none';
+        document.getElementById('surfaceChampsCercle').style.display = 'none';
+        document.getElementById('surfaceChampsTriangle').style.display = 'none';
+        if (e.target.value === 'rectangle') document.getElementById('surfaceChampsRectangle').style.display = 'block';
+        if (e.target.value === 'cercle') document.getElementById('surfaceChampsCercle').style.display = 'block';
+        if (e.target.value === 'triangle') document.getElementById('surfaceChampsTriangle').style.display = 'block';
+    });
+
+    document.getElementById('surfaceCalculer').addEventListener('click', () => {
+        const forme = document.getElementById('surfaceForme').value;
+        const res = document.getElementById('surfaceResultat');
+        let surface = 0, label = '';
+
+        if (forme === 'rectangle') {
+            const l = parseFloat(document.getElementById('surfaceLongueur').value);
+            const la = parseFloat(document.getElementById('surfaceLargeur').value);
+            if (isNaN(l) || isNaN(la)) { res.textContent = 'Veuillez entrer des valeurs valides.'; res.classList.add('visible'); return; }
+            surface = l * la;
+            label = 'Rectangle ' + l + 'm × ' + la + 'm';
+        } else if (forme === 'cercle') {
+            const r = parseFloat(document.getElementById('surfaceRayon').value);
+            if (isNaN(r)) { res.textContent = 'Veuillez entrer une valeur valide.'; res.classList.add('visible'); return; }
+            surface = Math.PI * r * r;
+            label = 'Cercle rayon ' + r + 'm';
+        } else if (forme === 'triangle') {
+            const b = parseFloat(document.getElementById('surfaceBase').value);
+            const h = parseFloat(document.getElementById('surfaceHauteur').value);
+            if (isNaN(b) || isNaN(h)) { res.textContent = 'Veuillez entrer des valeurs valides.'; res.classList.add('visible'); return; }
+            surface = (b * h) / 2;
+            label = 'Triangle base ' + b + 'm × hauteur ' + h + 'm';
+        }
+
+        res.innerHTML = '<strong>' + label + '</strong><br>' +
+                        '<strong>Surface :</strong> ' + surface.toFixed(2) + ' m²';
+        res.classList.add('visible');
+    });
+})();
+
+/* ============================================================
+   TABLEAU
+   ============================================================ */
+(function() {
+    const membres = [
+        { nom: 'Awa Ouédraogo', categorie: 'Enfant', age: 8, responsable: 'Mme TRAORÉ', statut: 'Actif' },
+        { nom: 'Kofi Sawadogo', categorie: 'Enfant', age: 10, responsable: 'M. KABORÉ', statut: 'Actif' },
+        { nom: 'Fatou Bationo', categorie: 'Adolescent', age: 14, responsable: 'Mme ZONGO', statut: 'Actif' },
+        { nom: 'Ibrahim Koné', categorie: 'Jeune', age: 17, responsable: 'M. OUÉDRAOGO', statut: 'Actif' },
+        { nom: 'Aminata Sanou', categorie: 'Enfant', age: 7, responsable: 'Mme TRAORÉ', statut: 'Actif' },
+        { nom: 'Boureima Zongo', categorie: 'Adolescent', age: 13, responsable: 'M. KABORÉ', statut: 'Inactif' },
+        { nom: 'Awa Sanou', categorie: 'Encadreur', age: 32, responsable: '—', statut: 'Actif' },
+        { nom: 'Kévin Kiessé Sanou', categorie: 'Encadreur', age: 35, responsable: '—', statut: 'Actif' }
+    ];
+
+    const tbody = document.getElementById('tableBody');
+    const search = document.getElementById('tableSearch');
+    const count = document.getElementById('tableCount');
+
+    function renderTable(liste) {
+        tbody.innerHTML = '';
+        if (liste.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:2rem; color:#64748b;">Aucun résultat</td></tr>';
+        } else {
+            liste.forEach(m => {
+                const badgeClass = m.statut === 'Actif' ? 'badge-actif' : 'badge-inactif';
+                tbody.innerHTML += '<tr>' +
+                    '<td><strong>' + m.nom + '</strong></td>' +
+                    '<td>' + m.categorie + '</td>' +
+                    '<td>' + m.age + ' ans</td>' +
+                    '<td>' + m.responsable + '</td>' +
+                    '<td><span class="badge-table ' + badgeClass + '">' + m.statut + '</span></td>' +
+                    '</tr>';
+            });
+        }
+        count.textContent = liste.length + ' membre' + (liste.length > 1 ? 's' : '');
+    }
+
+    search.addEventListener('input', () => {
+        const q = search.value.toLowerCase().trim();
+        const filtres = membres.filter(m =>
+            m.nom.toLowerCase().includes(q) ||
+            m.categorie.toLowerCase().includes(q) ||
+            m.statut.toLowerCase().includes(q) ||
+            m.responsable.toLowerCase().includes(q)
+        );
+        renderTable(filtres);
+    });
+
+    renderTable(membres);
+})();
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+(function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.slide img').forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+        });
+    });
+
+    function close() { lightbox.classList.remove('active'); }
+    lightboxClose.addEventListener('click', close);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+})();
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+(function() {
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        });
+    });
+})();
+
+/* ============================================================
+   FORMULAIRE CONTACT → WHATSAPP
+   ============================================================ */
+(function() {
+    const NUMERO = '22663 58 52 06';
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nom = document.getElementById('contactNom').value.trim();
+        const email = document.getElementById('contactEmail').value.trim();
+        const sujet = document.getElementById('contactSujet').value;
+        const message = document.getElementById('contactMessage').value.trim();
+
+        const lignes = [
+            'Bonjour CDEJ BF0959,',
+            '',
+            'Nom : ' + nom,
+            'Email : ' + email,
+            'Sujet : ' + sujet,
+            '',
+            'Message :',
+            message
+        ];
+        const url = 'https://wa.me/' + NUMERO + '?text=' + encodeURIComponent(lignes.join('\n'));
+        window.open(url, '_blank');
+        form.reset();
+    });
+})();
+
+/* ============================================================
+   PARRAINAGE → WHATSAPP
+   ============================================================ */
+(function() {
+    const NUMERO = '22663 58 52 06';
+    document.getElementById('btnParrainage').addEventListener('click', () => {
+        const message = 'Bonjour, je souhaite devenir parrain/marraine d\'un enfant du CDEJ BF0959. Pouvez-vous m\'envoyer les modalités ?';
+        const url = 'https://wa.me/' + NUMERO + '?text=' + encodeURIComponent(message);
+        window.open(url, '_blank');
+    });
+})();
+
+/* ============================================================
+   ANIMATIONS AU SCROLL
+   ============================================================ */
+(function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
+
+/* ============================================================
+   CHATBOT TIMOTHÉE
+   ============================================================ */
+(function() {
+    const chatToggle = document.getElementById('chatToggle');
+    const chatWindow = document.getElementById('chatWindow');
+    const chatClose = document.getElementById('chatClose');
+    const chatBody = document.getElementById('chatBody');
+    const chatInput = document.getElementById('chatInput');
+    const chatSend = document.getElementById('chatSend');
+    const chatSuggestions = document.getElementById('chatSuggestions');
+
+    let conversation = [];
+    let isStreaming = false;
+
+    // Rendu Markdown simple
+    function renderMarkdown(text) {
+        let html = text;
+        html = html.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+        html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+        html = html.replace(/`(.+?)`/g, '<code style="background:#f1f5f9;padding:0.1rem 0.3rem;border-radius:3px;font-family:monospace;font-size:0.85em;">$1</code>');
+        html = html.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank">$1</a>');
+        html = html.replace(/^- (.+)$/gm, '• $1');
+        html = html.replace(/\n\n+/g, '</p><p>');
+        html = html.replace(/\n/g, '<br>');
+        html = '<p>' + html + '</p>';
+        return html;
+    }
+
+    function addMessage(role, content) {
+        const div = document.createElement('div');
+        div.className = 'chat-message ' + role;
+        const avatarLabel = role === 'user' ? 'VO' : '<i class="fas fa-dove"></i>';
+        let bubbleContent;
+        if (role === 'user') {
+            bubbleContent = content.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
+        } else {
+            bubbleContent = renderMarkdown(content);
+        }
+        div.innerHTML = '<div class="chat-message-avatar">' + avatarLabel + '</div>' +
+                        '<div class="chat-bubble">' + bubbleContent + '</div>';
+        chatBody.appendChild(div);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function addTyping() {
+        const div = document.createElement('div');
+        div.className = 'chat-message bot';
+        div.id = 'chatTyping';
+        div.innerHTML = '<div class="chat-message-avatar"><i class="fas fa-dove"></i></div>' +
+                        '<div class="chat-bubble"><div class="chat-typing"><span></span><span></span><span></span></div></div>';
+        chatBody.appendChild(div);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function removeTyping() {
+        const el = document.getElementById('chatTyping');
+        if (el) el.remove();
+    }
+
+    function renderWelcome() {
+        chatBody.innerHTML = '';
+        addMessage('bot', 'Bonjour et bienvenue au **CDEJ BF0959** !\n\nJe suis **Timothée**, l\'assistant du centre. Je suis là pour répondre à vos questions sur notre mission, nos activités, le parrainage, ou pour vous orienter si vous souhaitez nous soutenir.\n\nComment puis-je vous aider ?');
+    }
+
+    async function callGroq(messages) {
+       if (!GROQ_API_KEY || GROQ_API_KEY.includes('VOTRE_VRAIE_CLE')) {
+    throw new Error('La clé API Groq n\'est pas encore configurée. Remplacez la valeur de GROQ_API_KEY.');
+}
+        const response = await fetch(GROQ_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + GROQ_API_KEY
+            },
+            body: JSON.stringify({
+                model: GROQ_MODEL,
+                messages: messages,
+                temperature: 0.7,
+                max_tokens: 800,
+                stream: false
+            })
+        });
+        if (!response.ok) {
+            const err = await response.text();
+            throw new Error('Erreur ' + response.status + ' : ' + err);
+        }
+        const data = await response.json();
+        return data.choices[0].message.content;
+    }
+
+    async function sendMessage() {
+        if (isStreaming) return;
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        addMessage('user', text);
+        chatInput.value = '';
+        chatInput.style.height = 'auto';
+        chatSend.disabled = true;
+        isStreaming = true;
+        chatSuggestions.style.display = 'none';
+        addTyping();
+
+        conversation.push({ role: 'user', content: text });
+
+        try {
+            const messages = [
+                { role: 'system', content: TIMOTHEE_PROMPT },
+                ...conversation
+            ];
+            const reply = await callGroq(messages);
+            conversation.push({ role: 'assistant', content: reply });
+            removeTyping();
+            addMessage('bot', reply);
+        } catch (err) {
+            removeTyping();
+            addMessage('bot', '⚠️ Je rencontre une difficulté technique : ' + err.message + '\n\nEn attendant, vous pouvez nous contacter directement par WhatsApp au +226 63 58 52 06.');
+        } finally {
+            chatSend.disabled = false;
+            isStreaming = false;
+        }
+    }
+
+    function openChat() {
+        chatWindow.classList.add('active');
+        chatToggle.classList.add('active');
+        chatToggle.querySelector('.fa-comment-dots').style.display = 'none';
+        chatToggle.querySelector('.fa-times').style.display = 'block';
+        if (chatBody.children.length === 0) {
+            renderWelcome();
+        }
+        setTimeout(() => chatInput.focus(), 300);
+    }
+
+    function closeChat() {
+        chatWindow.classList.remove('active');
+        chatToggle.classList.remove('active');
+        chatToggle.querySelector('.fa-comment-dots').style.display = 'block';
+        chatToggle.querySelector('.fa-times').style.display = 'none';
+    }
+
+    chatToggle.addEventListener('click', () => {
+        if (chatWindow.classList.contains('active')) closeChat();
+        else openChat();
+    });
+    chatClose.addEventListener('click', closeChat);
+    chatSend.addEventListener('click', sendMessage);
+
+    chatInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+
+    chatInput.addEventListener('input', () => {
+        chatInput.style.height = 'auto';
+        chatInput.style.height = Math.min(chatInput.scrollHeight, 100) + 'px';
+    });
+
+    document.querySelectorAll('.chat-suggestion').forEach(btn => {
+        btn.addEventListener('click', () => {
+            chatInput.value = btn.dataset.prompt;
+            sendMessage();
+        });
+    });
+
+    if (!GROQ_API_KEY || GROQ_API_KEY.includes('DEMO')) {
+        setTimeout(() => {
+            console.warn('⚠️ Configurez la clé API Groq pour activer Timothée.');
+        }, 1000);
+    }
+})();
+</script>
+
+</body>
+</html>
